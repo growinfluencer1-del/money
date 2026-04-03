@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pillu Domdy 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Floating Hearts Background -->
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <!-- INTRO SCREEN -->
+  <div class="screen active" id="screen-intro">
+    <div class="intro-container">
+      <div class="crown">👑</div>
+      <h1 class="main-title">Pillu Domdy</h1>
+      <p class="subtitle">Tumhala ek khaas surprise ahe...</p>
+      <div class="date-badge">💫 3rd April 2024 → 4th April 2026 💫</div>
+      <button class="btn-magic" onclick="goTo('screen-question')">
+        <span>Open Your Surprise</span>
+        <div class="btn-shine"></div>
+      </button>
+      <div class="floating-emoji e1">🌸</div>
+      <div class="floating-emoji e2">💕</div>
+      <div class="floating-emoji e3">✨</div>
+      <div class="floating-emoji e4">🌹</div>
+      <div class="floating-emoji e5">💖</div>
+    </div>
+  </div>
+
+  <!-- QUESTION SCREEN -->
+  <div class="screen" id="screen-question">
+    <div class="question-container">
+      <div class="profile-ring">
+        <div class="profile-inner">💑</div>
+      </div>
+      <h2 class="q-title">Ek Choti Si Question...</h2>
+      <p class="q-text">Tu mazavar <span class="highlight">LOVE</span> karte ka? 🥺</p>
+      <p class="q-sub">(Khup important hai, seedha bata!)</p>
+      <div class="choice-btns">
+        <button class="btn-yes" id="yesBtn" onclick="handleYes()">
+          💖 Haaaan YES!
+        </button>
+        <button class="btn-no" id="noBtn" onmouseover="escapeNo(event, this)" ontouchstart="escapeNo(event, this)">
+          😅 No...
+        </button>
+      </div>
+      <div class="no-counter-display" id="noCounter" style="display:none;">
+        <span id="noCountText"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORY SCREEN -->
+  <div class="screen" id="screen-story">
+    <div class="story-container">
+      <h2 class="story-heading">Hamari Kahaani 📖</h2>
+      <div class="timeline" id="timeline"></div>
+      <button class="btn-magic" style="margin-top:40px;" onclick="goTo('screen-game')">
+        Aage Badho! 🎮
+        <div class="btn-shine"></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div class="screen" id="screen-game">
+    <div class="game-container">
+      <h2 class="game-title">💝 Catch Karo Mera Pyaar!</h2>
+      <p class="game-sub">Girte hearts pakdo - 30 seconds!</p>
+      <div class="game-score-area">
+        <span>Score: <b id="gameScore">0</b></span>
+        <span>Time: <b id="gameTime">30</b>s</span>
+      </div>
+      <div class="game-area" id="gameArea"></div>
+      <button class="btn-magic" id="startGameBtn" onclick="startGame()">
+        🎮 Start Game!
+        <div class="btn-shine"></div>
+      </button>
+      <div id="gameResult" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- FINAL SCREEN -->
+  <div class="screen" id="screen-final">
+    <div class="final-container">
+      <div class="fireworks" id="fireworks"></div>
+      <h1 class="final-title">Happy Anniversary</h1>
+      <h2 class="final-sub">Meri Pillu Domdy! 💖</h2>
+      <div class="love-letter">
+        <p>6th class mdhye pahile, dusrya section mdhye tuzhi glimpse milli...</p>
+        <p>7th mdhye tula mahit zhalein mi tujhyavar love karto...</p>
+        <p>8th mdhye same section - swarg miltalla hota mala! 🥹</p>
+        <p>Corona ala, ghar la mahit zhalein - sab kuch roknat alyasarkha watla...</p>
+        <p>3 April 2024 - Nanded la, JEE paper deta deta tuzha haat dhamadla... 💫</p>
+        <p>5 April 2024 - Cottage Cafe mdhye sab misunderstanding dur zhali...</p>
+        <p class="big-love">Aaj bhi, kal bhi, hamesha... <br/> <span>Tujhyavar</span> LOVE karto! 💖</p>
+      </div>
+      <button class="btn-magic btn-big" onclick="launchConfetti()">
+        🎉 Celebrate!
+        <div class="btn-shine"></div>
+      </button>
+      <div class="forever-badge">Forever & Always 💍</div>
+    </div>
+  </div>
+
+  <!-- NO POPUP -->
+  <div class="popup-overlay" id="noPopup">
+    <div class="popup-box">
+      <div class="popup-emoji" id="popupEmoji">😤</div>
+      <h3 id="popupTitle">Eh? NO?! 😤</h3>
+      <p id="popupMsg">Ek chance aur de apne aap ko...</p>
+      <button class="btn-yes popup-retry" onclick="retryYes()">Thik ahe, YES! 💖</button>
+      <button class="btn-no-small" onclick="closePopupAndTryAgain()">Nahi... (galat choice!)</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
